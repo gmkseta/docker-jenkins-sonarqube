@@ -2,7 +2,7 @@ jenkins:
   container_name: jenkins
   build: "jenkins/"
   ports:
-    - "8080:8080"
+    - "80:8080"
   environment:
     - JAVA_OPTS:-Djava.awt.headless=true
   volumes:
@@ -12,7 +12,7 @@ sonarqube:
   container_name: sonarqube
   image: sonarqube
   ports:
-   - "9000:9000"
+   - "8080:9000"
   links:
    - db
   environment:
