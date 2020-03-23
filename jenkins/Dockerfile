@@ -1,5 +1,5 @@
 FROM java:8-jdk
-RUN deb [check-valid-until=no] http://archive.debian.org/debian jessie-backports main
+RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
 RUN apt-get update && apt-get install -y git curl zip && rm -rf /var/lib/apt/lists/*
 RUN apt-get update -y
 RUN apt-get install -y vim
