@@ -1,5 +1,5 @@
 FROM java:8-jdk
-
+RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551
 RUN apt-get update && apt-get install -y git curl zip && rm -rf /var/lib/apt/lists/*
 RUN apt-get update -y
 RUN apt-get install -y vim
@@ -46,7 +46,7 @@ ENV JENKINS_UC https://updates.jenkins.io
 RUN chown -R ${user} "$JENKINS_HOME" /usr/share/jenkins/ref
 
 # for main web interface:
-EXPOSE 8080
+EXPOSE 80
 
 # will be used by attached slave agents:
 EXPOSE 50000
